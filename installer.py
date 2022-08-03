@@ -3,7 +3,7 @@ import subprocess
 system = str(subprocess.check_output("cat /etc/*-release | grep PRETTY", shell=True))
 so = system.lower()
 
-install = str(input('Instalação Agent pressione A, Instalação Proxy pressione P:')).lower()
+install = str(input('Instalação Agent pressione A -- Instalação Proxy pressione P:')).lower()
 
 
 if "ubuntu" in so and install=='p':

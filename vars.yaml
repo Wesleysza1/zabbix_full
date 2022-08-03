@@ -1,10 +1,9 @@
-urlserver: http://3.101.127.129/zabbix 
+urlserver: http://54.67.52.125/zabbix 
 server: 172.31.114.108 
 serverActive: 172.31.114.108
 proxymode: 0 # 0 = active, 1 =passive
 ConfigFrequency: 60 #time in seconds
 
-# Login server zabbix 
 login_user: Admin
 login_password: zabbix
 

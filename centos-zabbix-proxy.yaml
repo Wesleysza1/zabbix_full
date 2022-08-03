@@ -157,4 +157,8 @@
     
     - name: ALERTA!!
       ansible.builtin.debug:
-        msg: ATENÇÃO, O COMPUTADOR SERÁ REINICIALIZADO EM 1 MINUTO.
+        msg:
+        - AVISO!!
+        - INSTALAÇÃO CONCLUÍDA.
+        - COMPUTADOR SERÁ REINICIALIZADO AUTOMATICAMENTE EM 1 MINUTO PARA APLICAR CONFIGURAÇÕES.
+        - CASO DESEJE REINICIAR EM OUTRO MOMENTO INSIRA O COMANDO "sudo shutdown -c"
