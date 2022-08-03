@@ -7,10 +7,10 @@ ConfigFrequency: 60 #time in seconds
 login_user: Admin
 login_password: zabbix
 
-proxy_name: CentOSProxy
+proxy_name: Proxy_Ubuntu
 db_name: zabbix_proxy
 db_user: zabbix
 db_password: "{{ lookup('community.general.random_string', length=16, special=false) }}"
-host_name: CentOS8
+host_name: Ubuntu
 host_groups: Linux servers
 link_templates: Linux by Zabbix agent
