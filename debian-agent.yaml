@@ -18,17 +18,9 @@
     - name: Instalando Zabbix Agent
       shell: sudo apt -y install zabbix-agent
     
-    - name: Configuranto arquivo de conexao
+    - name: Configurando arquivo de conexao
       become: true 
       shell: sed -i.bkp '117c\Server={{ server }},{{ hip.stdout }}' /etc/zabbix/zabbix_agentd.conf; sudo sed -i.bkp '170c\ServerActive={{ serverActive }}' /etc/zabbix/zabbix_agentd.conf
-    
-    - name: Instalando UFW
-      become: true
-      shell: sudo apt install ufw -y
-    
-    - name: Habilitando UFW
-      become: true
-      shell: sudo ufw enable
     
     - name: Stop Zabbix-agent
       become: true
@@ -41,14 +33,6 @@
     - name: Habilitando Zabbix-agent
       become: true
       shell: sudo systemctl enable zabbix-agent
-    
-    - name: Liberando porta 10050
-      become: true
-      shell: sudo ufw allow 10050/tcp
-    
-    - name: Reload UFW
-      become: true
-      shell: sudo ufw reload
     
     - name: Instalando Pip
       become: true

@@ -40,7 +40,7 @@
       become: true
       shell: apt update
     
-    - name: Installing Proxy and DB
+    - name: Installing Proxy
       become: true
       shell: apt -y install zabbix-proxy-mysql zabbix-sql-scripts software-properties-common
     
