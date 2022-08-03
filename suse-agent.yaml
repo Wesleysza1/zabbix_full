@@ -28,7 +28,7 @@
     
     - name: Configurando Hostname
       become: true
-      shell: sed -i.bkp '181c\Server={{ host_name }}' /etc/zabbix/zabbix_agentd.conf
+      shell: sed -i.bkp '181c\Hostname={{ host_name }}' /etc/zabbix/zabbix_agentd.conf
     
     - name: Configurando Firewall
       shell: systemctl start firewalld; firewall-cmd --permanent --add-port=10050/tcp; firewall-cmd --reload

@@ -15,7 +15,7 @@
     - name: Instalando Zabbix Agent
       shell: sudo yum -y install zabbix-agent
     
-    - name: Configuranto arquivo de conexao
+    - name: Configurando arquivo de conexao
       become: true
       shell: sed -i.bkp '117c\Server={{ server }},{{ hip.stdout }}' /etc/zabbix/zabbix_agentd.conf; sudo sed -i.bkp '170c\ServerActive={{ serverActive }}' /etc/zabbix/zabbix_agentd.conf
     
