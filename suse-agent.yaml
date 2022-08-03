@@ -50,6 +50,7 @@
       shell: pip3 install zabbix-api
     
     - name: Colocando a maquina no monitoramento
+      ignore_errors: yes
       local_action:
         module: zabbix_host
         server_url: "{{ urlserver }}"
