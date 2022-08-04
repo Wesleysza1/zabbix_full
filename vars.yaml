@@ -1,16 +1,21 @@
-urlserver: http://54.67.52.125/zabbix 
-server: 172.31.114.108 
-serverActive: 172.31.114.108
-proxymode: 0 # 0 = active, 1 =passive
-ConfigFrequency: 60 #time in seconds
+urlserver: http://52.53.129.251/zabbix # Preencher com endereço do server onde o proxy/agent sera adicionado
+server: 172.31.114.108  # Preencher com ip privado do server
+serverActive: 172.31.114.108 # Preencher com ip privado do server 
+proxymode: 0 # Modo qual o proxy sera configurado: 0 = active, 1 =passive
+ConfigFrequency: 60 # Frequencia em segundos qual o proxy envia dados ao server
 
-login_user: Admin
+# Dados para login no zabbix server
+# caso deseje inserir manualmente, apenas deixe com valores em branco
+login_user: Admin 
 login_password: zabbix
 
-proxy_name: Proxy_Ubuntu
-db_name: zabbix_proxy
-db_user: zabbix
-db_password: "{{ lookup('community.general.random_string', length=16, special=false) }}"
+proxy_name: Proxy_Ubuntu # Nome do proxy
+db_name: zabbix_proxy # nome do banco de dados que sera criado
+db_user: zabbix # nome do usuario que sera adicionado ao banco
+db_password: "{{ lookup('community.general.random_string', length=16, special=false) }}" # NAO ALTERAR
 host_name: Ubuntu
-host_groups: Linux servers
-link_templates: Linux by Zabbix agent
+host_groups: # grupos qual o host sera adicionado
+  - Linux servers
+  - Virtual machines
+link_templates: # teplates qual o host sera adicionado
+  - Linux by Zabbix agent
