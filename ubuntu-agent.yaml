@@ -6,6 +6,10 @@
     - name: Registro de IP
       shell: hostname -I | awk '{print $1}'
       register: hip
+
+    - name: Registro de Hostname
+      shell: cat /etc/hostname
+      register: hostname
     
     - name: Instalando Zabbix 6.0
       become: true
@@ -60,8 +64,8 @@
         server_url: "{{ urlserver }}"
         login_user: "{{ login_user }}"
         login_password: "{{ login_password }}"
-        host_name: "{{ host_name }}"
-        visible_name: 
+        host_name: "{{ hostname.stdout }}"
+        visible_name: Atos - Linux by Zabbix agent
         host_groups: "{{ host_groups }}"
         link_templates: "{{ link_templates }}"
         status: enabled

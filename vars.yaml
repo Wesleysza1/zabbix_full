@@ -1,21 +1,20 @@
-urlserver: http://52.53.129.251/zabbix # Preencher com endereço do server onde o proxy/agent sera adicionado
-server: 172.31.114.108  # Preencher com ip privado do server
-serverActive: 172.31.114.108 # Preencher com ip privado do server 
+urlserver: http://161.89.129.135/# Preencher com endereço do server onde o proxy/agent sera adicionado
+server: 10.120.13.146  # Preencher com ip privado do server
+serverActive: 10.120.13.146 # Preencher com ip privado do server 
 proxymode: 0 # Modo qual o proxy sera configurado: 0 = active, 1 =passive
 ConfigFrequency: 60 # Frequencia em segundos qual o proxy envia dados ao server
 
 # Dados para login no zabbix server
 # caso deseje inserir manualmente, apenas deixe com valores em branco
-login_user: Admin 
-login_password: zabbix
+login_user: api
+login_password: Ap!ZbX@2022
 
-proxy_name: Proxy_Ubuntu # Nome do proxy
+proxy_name: Zabbix-Proxy-Oxiteno # Nome do proxy
 db_name: zabbix_proxy # nome do banco de dados que sera criado
 db_user: zabbix # nome do usuario que sera adicionado ao banco
 db_password: "{{ lookup('community.general.random_string', length=16, special=false) }}" # NAO ALTERAR
 host_name: Ubuntu
 host_groups: # grupos qual o host sera adicionado
-  - Linux servers
-  - Virtual machines
+  - Oxiteno
 link_templates: # teplates qual o host sera adicionado
   - Linux by Zabbix agent
