@@ -1,4 +1,4 @@
-urlserver: http://161.89.129.135/# Preencher com endereço do server onde o proxy/agent sera adicionado
+urlserver: http://161.89.129.135/ # Preencher com endereço do server onde o proxy/agent sera adicionado
 server: 10.120.13.146  # Preencher com ip privado do server
 serverActive: 10.120.13.146 # Preencher com ip privado do server 
 proxymode: 0 # Modo qual o proxy sera configurado: 0 = active, 1 =passive
